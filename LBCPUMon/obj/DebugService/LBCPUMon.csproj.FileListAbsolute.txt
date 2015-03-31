@@ -1,0 +1,9 @@
+C:\Users\user\Desktop\CpuMonitor_bla_bla\CpuMonitor_Src_4.2.6\cpumonitor\LBCPUMon\bin\DebugService\LBCPUMon.exe.config
+C:\Users\user\Desktop\CpuMonitor_bla_bla\CpuMonitor_Src_4.2.6\cpumonitor\LBCPUMon\bin\DebugService\LBCPUMon.exe
+C:\Users\user\Desktop\CpuMonitor_bla_bla\CpuMonitor_Src_4.2.6\cpumonitor\LBCPUMon\bin\DebugService\LBCPUMon.pdb
+C:\Users\user\Desktop\CpuMonitor_bla_bla\CpuMonitor_Src_4.2.6\cpumonitor\LBCPUMon\obj\DebugService\LBCPUMon.LBCPUMon.resources
+C:\Users\user\Desktop\CpuMonitor_bla_bla\CpuMonitor_Src_4.2.6\cpumonitor\LBCPUMon\obj\DebugService\LBCPUMon.ProjectInstaller.resources
+C:\Users\user\Desktop\CpuMonitor_bla_bla\CpuMonitor_Src_4.2.6\cpumonitor\LBCPUMon\obj\DebugService\Centivus.Services.ServiceDebugger.resources
+C:\Users\user\Desktop\CpuMonitor_bla_bla\CpuMonitor_Src_4.2.6\cpumonitor\LBCPUMon\obj\DebugService\LBCPUMon.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\CpuMonitor_bla_bla\CpuMonitor_Src_4.2.6\cpumonitor\LBCPUMon\obj\DebugService\LBCPUMon.exe
+C:\Users\user\Desktop\CpuMonitor_bla_bla\CpuMonitor_Src_4.2.6\cpumonitor\LBCPUMon\obj\DebugService\LBCPUMon.pdb
