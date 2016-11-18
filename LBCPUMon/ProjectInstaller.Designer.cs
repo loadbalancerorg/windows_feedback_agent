@@ -40,7 +40,7 @@
             // serviceInstaller1
             // 
             this.serviceInstaller1.Description = "LoadBalancer CPU monitor. Monitors and reports CPU activity.";
-            this.serviceInstaller1.DisplayName = "LoadBalancer CPU moniitor";
+            this.serviceInstaller1.DisplayName = "LoadBalancer CPU monitor";
             this.serviceInstaller1.ServiceName = "LBCPUMon";
             this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 

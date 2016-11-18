@@ -130,7 +130,7 @@ namespace LBCPUMon
                     initialrun = false;
                 }
 
-                Send(handler, GetResponseForMode(Mode));
+                Send(handler, GetResponseForMode());
             }
             catch (Exception ex)
             {
@@ -293,19 +293,20 @@ namespace LBCPUMon
 
         private double GetCPULoad()
         {
-            double load = 0;
-            try
-            {
-                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
+            double num = 0.0;
 
-                foreach (ManagementObject queryObj in searcher.Get())
-                {
-                    load = Convert.ToDouble(queryObj["LoadPercentage"]);
+            ManagementObjectSearcher managementObjectSearcher = new ManagementObjectSearcher("select * from Win32_PerfFormattedData_PerfOS_Processor");
+           
+            using (ManagementObjectCollection.ManagementObjectEnumerator enumerator = managementObjectSearcher.Get().GetEnumerator()) {
+                while (enumerator.MoveNext()) {
+                    ManagementObject managementObject = (ManagementObject)enumerator.Current;
+                    num += Convert.ToDouble(managementObject["PercentProcessorTime"]);
                 }
             }
-            catch (ManagementException e)
-            {}
-            return load;
+
+            num /= (double)managementObjectSearcher.Get().Count;
+
+            return num;
         }
 
         private double GetSessionsUtilized(string IPAddress, int servicePort, int maxNumberOfSessionsPerService)
@@ -326,7 +327,7 @@ namespace LBCPUMon
             return Result;
         }
 
-        public string GetResponseForMode(Mode myMode)
+        public string GetResponseForMode()
         {
             if (readAgentStatusFromConfig)
             {
@@ -334,15 +335,26 @@ namespace LBCPUMon
                 {
                     ReadConfiguration();
                     lastExecutionTime = DateTime.Now;
-                    if (agentStatus.ToLower().Equals("normal")) { myMode = Mode.Normal; }
-                    if (agentStatus.ToLower().Equals("down") || agentStatus.ToLower().Equals("halt")) { myMode = Mode.Halt; }
-                    if (agentStatus.ToLower().Equals("drain")) { myMode = Mode.Drain; }
+                    if (agentStatus.ToLower().Equals("normal")) {
+                        if (Mode != Mode.Normal)
+                        {
+                            initialrun = true;
+                            startTime = DateTime.UtcNow;
+                            Mode = Mode.Normal;
+                        }
+                        else
+                        {
+                            Mode = Mode.Normal;
+                        }
+                    }
+                    if (agentStatus.ToLower().Equals("down") || agentStatus.ToLower().Equals("halt")) { Mode = Mode.Halt; }
+                    if (agentStatus.ToLower().Equals("drain")) { Mode = Mode.Drain; }
                 }
             }
 
             string Response = "error\n";
 
-            switch (myMode)
+            switch (Mode)
             {
                 case Mode.Normal:
                     double cpuLoad = GetCPULoad();
