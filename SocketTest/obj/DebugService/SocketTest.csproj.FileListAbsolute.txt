@@ -1,4 +1,0 @@
-C:\Users\user\Desktop\CpuMonitor_bla_bla\CpuMonitor_Src_4.2.6\cpumonitor\SocketTest\bin\DebugService\SocketTest.exe
-C:\Users\user\Desktop\CpuMonitor_bla_bla\CpuMonitor_Src_4.2.6\cpumonitor\SocketTest\bin\DebugService\SocketTest.pdb
-C:\Users\user\Desktop\CpuMonitor_bla_bla\CpuMonitor_Src_4.2.6\cpumonitor\SocketTest\obj\DebugService\SocketTest.exe
-C:\Users\user\Desktop\CpuMonitor_bla_bla\CpuMonitor_Src_4.2.6\cpumonitor\SocketTest\obj\DebugService\SocketTest.pdb

@@ -27,9 +27,13 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Monitor</ProductName>
+    <PublisherName>Loadbalancer.org</PublisherName>
+    <SuiteName>Feedback Agent</SuiteName>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>4.2.5.%2a</ApplicationVersion>
+    <ApplicationVersion>4.6.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
